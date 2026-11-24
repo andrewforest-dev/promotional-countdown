@@ -1,0 +1,362 @@
+
+/*
+ * Promotional Countdown
+ * Author: Andres Devia - Andrew Forest
+ * Responsive User Interface
+ */
+
+/* Design system */
+
+:root {
+    --background: #0d0e12;
+    --surface: #15171d;
+    --surface-light: #1e2027;
+    --gold: #D4AF37;
+    --gold-light: #F1D477;
+    --white: #ffffff;
+    --muted: #a1a1aa;
+    --border: rgba(255, 255, 255, 0.08);
+    --success: #4ade80;
+}
+
+/* Global styles */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-family: Arial, Helvetica, sans-serif;
+    background:
+        radial-gradient(
+            ellipse at 50% 30%,
+            rgba(212, 175, 55, 0.07),
+            transparent 55%
+        ),
+        var(--background);
+    color: var(--white);
+    -webkit-font-smoothing: antialiased;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Header */
+
+.header {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 28px 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.brand {
+    font-size: 15px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.brand span {
+    color: var(--gold);
+}
+
+.version {
+    font-size: 11px;
+    letter-spacing: 2px;
+    color: var(--muted);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 8px 12px;
+}
+
+/* Main layout */
+
+.main-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 24px;
+}
+
+/* Promotion card */
+
+.promotion-card {
+    width: 100%;
+    max-width: 780px;
+    padding: 60px 45px;
+    text-align: center;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 24px;
+    box-shadow: 0 30px 100px rgba(0, 0, 0, 0.4);
+    animation: fadeIn 0.7s ease;
+}
+
+.promotion-label {
+    display: inline-block;
+    padding: 9px 16px;
+    margin-bottom: 24px;
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    border-radius: 30px;
+    color: var(--gold);
+    background: rgba(212, 175, 55, 0.06);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 3px;
+}
+
+/* Typography */
+
+h1 {
+    font-size: clamp(38px, 6vw, 72px);
+    font-weight: 800;
+    line-height: 1.05;
+    letter-spacing: -2px;
+    margin-bottom: 20px;
+}
+
+.description {
+    color: var(--muted);
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+/* Discount value */
+
+.discount-value {
+    margin: 28px 0;
+    font-size: clamp(70px, 12vw, 115px);
+    font-weight: 800;
+    letter-spacing: -6px;
+    line-height: 1;
+    color: var(--gold);
+}
+
+.discount-value span {
+    font-size: 28px;
+    letter-spacing: -1px;
+    margin-left: 5px;
+}
+
+/* Countdown grid */
+
+.countdown {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 12px;
+    margin: 30px 0;
+}
+
+.time-box {
+    padding: 25px 10px;
+    background: var(--surface-light);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    transition: border-color 0.3s ease,
+                transform 0.3s ease;
+}
+
+.time-box:hover {
+    border-color: var(--gold);
+    transform: translateY(-4px);
+}
+
+.time-box span {
+    display: block;
+    font-size: clamp(30px, 5vw, 48px);
+    font-weight: 800;
+    font-variant-numeric: tabular-nums;
+    color: var(--white);
+    letter-spacing: -1px;
+    margin-bottom: 8px;
+}
+
+.time-box small {
+    display: block;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: var(--muted);
+}
+
+/* Promotion status */
+
+.promotion-status {
+    padding: 18px;
+    border-radius: 10px;
+    background: var(--gold);
+    color: #101115;
+    font-weight: 800;
+    font-size: 12px;
+    letter-spacing: 1.5px;
+    line-height: 1.5;
+    transition: background 0.3s ease;
+}
+
+.promotion-status.active {
+    background: var(--success);
+}
+
+.promotion-card.active {
+    border-color: rgba(74, 222, 128, 0.4);
+}
+
+.timezone {
+    margin-top: 18px;
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 1px;
+}
+
+/* Footer */
+
+.footer {
+    padding: 25px 20px 35px;
+    text-align: center;
+}
+
+.footer p {
+    color: var(--muted);
+    font-size: 12px;
+    margin-bottom: 14px;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+}
+
+.social-links a {
+    color: var(--gold);
+    font-size: 12px;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: var(--white);
+}
+
+a:focus-visible {
+    outline: 2px solid var(--gold);
+    outline-offset: 5px;
+}
+
+noscript {
+    padding: 15px;
+    text-align: center;
+    color: var(--white);
+}
+
+/* Animations */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Tablet and mobile */
+
+@media (max-width: 768px) {
+
+    .header {
+        padding: 22px 20px;
+    }
+
+    .main-container {
+        padding: 25px 16px;
+    }
+
+    .promotion-card {
+        padding: 45px 22px;
+        border-radius: 18px;
+    }
+
+    .countdown {
+        gap: 8px;
+    }
+
+    .time-box {
+        padding: 20px 5px;
+    }
+
+    .time-box small {
+        font-size: 9px;
+        letter-spacing: 1px;
+    }
+
+    .discount-value {
+        letter-spacing: -4px;
+    }
+}
+
+/* Small mobile devices */
+
+@media (max-width: 400px) {
+
+    .brand {
+        font-size: 12px;
+        letter-spacing: 1px;
+    }
+
+    .promotion-card {
+        padding: 35px 14px;
+    }
+
+    .promotion-label {
+        font-size: 8px;
+        letter-spacing: 2px;
+    }
+
+    .countdown {
+        gap: 5px;
+    }
+
+    .time-box {
+        border-radius: 8px;
+    }
+
+    .time-box span {
+        font-size: 27px;
+    }
+
+    .time-box small {
+        font-size: 8px;
+        letter-spacing: 0.5px;
+    }
+
+    .promotion-status {
+        font-size: 10px;
+    }
+}
+
+/* Accessibility */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation: none !important;
+        transition: none !important;
+    }
+}
