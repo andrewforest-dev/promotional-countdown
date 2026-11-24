@@ -1,0 +1,125 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="Dynamic monthly promotional countdown application.">
+
+    <meta name="author" content="Andres Devia">
+
+    <title>Promotional Countdown | Andrew Forest</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="brand">
+            PROMO<span>COUNTDOWN</span>
+        </div>
+
+        <span class="version">V.1.0</span>
+    </header>
+
+    <main class="main-container">
+
+        <section class="promotion-card">
+
+            <div class="promotion-label" id="promotion-label">
+                EXCLUSIVE MONTHLY OFFER
+            </div>
+
+            <h1 id="promotion-title">
+                Good things<br>are coming.
+            </h1>
+
+            <p class="description" id="promotion-description">
+                Enjoy 15% off on the 15th of every month.
+            </p>
+
+            <div class="discount-value">
+                15<span>% OFF</span>
+            </div>
+
+            <div class="countdown" id="countdown"
+                 role="timer" aria-label="Promotion countdown">
+
+                <div class="time-box">
+                    <span id="days">00</span>
+                    <small>DAYS</small>
+                </div>
+
+                <div class="time-box">
+                    <span id="hours">00</span>
+                    <small>HOURS</small>
+                </div>
+
+                <div class="time-box">
+                    <span id="minutes">00</span>
+                    <small>MINUTES</small>
+                </div>
+
+                <div class="time-box">
+                    <span id="seconds">00</span>
+                    <small>SECONDS</small>
+                </div>
+
+            </div>
+
+            <div class="promotion-status"
+                 id="promotion-status"
+                 role="status">
+                Loading promotion...
+            </div>
+
+            <p class="timezone">
+                America/Bogota · UTC-5
+            </p>
+
+        </section>
+
+    </main>
+
+    <footer class="footer">
+
+        <p>Designed &amp; developed by Andrés Devia</p>
+
+        <div class="social-links">
+
+            <a href="https://andrewforest.com"
+               target="_blank"
+               rel="noopener noreferrer">
+                Portfolio
+            </a>
+
+            <a href="https://github.com/andrewforest-dev/promotional-countdown"
+               target="_blank"
+               rel="noopener noreferrer">
+                GitHub
+            </a>
+
+            <a href="https://nexxoagencia.com"
+               target="_blank"
+               rel="noopener noreferrer">
+                Nexxo Agencia
+            </a>
+
+        </div>
+
+    </footer>
+
+    <noscript>
+        Please enable JavaScript to use the countdown.
+    </noscript>
+
+</body>
+</html>
